@@ -41,8 +41,12 @@ var addTwoNumbers = function (l1, l2) {
             l3 = root;
         }
 
-        l1 = l1.next;
-        l2 = l2.next;
+        l1 = l1 && l1.next;
+        l2 = l2 && l2.next;
+    }
+
+    if (n === 1) {
+        l3.next = new ListNode(n, null);
     }
 
     return root;
