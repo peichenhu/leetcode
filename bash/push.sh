@@ -9,7 +9,7 @@ set -e
 
 # 保存并推送仓库
 git add .
-git commit -m "deploy"
+git commit -m "算法训练"
 npm version patch
 git push
 
