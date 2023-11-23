@@ -11,14 +11,13 @@
  * @return {number}
  */
 var compareVersion = function (version1, version2) {
-    const tempA = version1.split(".");
-    const tempB = version2.split(".");
-    const maxLen = Math.max(tempA.length, tempB.length);
-    for (let i = 0; i < maxLen; i++) {
-        const valueA = +tempA[i] || 0;
-        const valueB = +tempB[i] || 0;
-        if (valueA === valueB) continue;
-        return valueA > valueB ? 1 : -1;
+    const v1 = version1.split(".");
+    const v2 = version2.split(".");
+    for (let i = 0; i < v1.length || i < v2.length; i++) {
+        let num1 = +v1[i] || 0;
+        let num2 = +v2[i] || 0;
+        if (num1 === num2) continue;
+        return num1 > num2 ? 1 : -1;
     }
     return 0;
 };
